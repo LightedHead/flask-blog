@@ -41,18 +41,14 @@
 				<h2 class="slogan">COME TO JOIN US !</h2>
 			</header>
 		</div>
-        <div class="wrapper-holder green">
+        <div class="wrapper-holder grey">
 			<section id="main">
                 {% block main %}
-				<h2>Here are my biggest achievements</h2>
+
                 {% endblock %}
 			</section>
 		</div>
-		<div id="footer">
-            {% block footer %}
 
-            {% endblock %}
-		</div>
 	</div>
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="{{url_for('static', filename='js/isotope.pkgd.min.js')}}" ></script>
@@ -71,10 +67,6 @@
            {% endif %}
        {% endwith %}
 
-        {% block content %}
 
-        {% endblock %}
     </body>
 </html>
-
-<script src="{{ url_for('static',filename= 'tinymce/tinymce.min.js')}}"></script>

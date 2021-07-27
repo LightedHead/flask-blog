@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `flaskblog` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `flaskblog`;
 -- MySQL dump 10.13  Distrib 8.0.22, for Win64 (x86_64)
 --
 -- Host: localhost    Database: flaskblog
@@ -65,7 +63,7 @@ CREATE TABLE `article` (
 
 LOCK TABLES `article` WRITE;
 /*!40000 ALTER TABLE `article` DISABLE KEYS */;
-INSERT INTO `article` VALUES ('test','<p>11</p>\r\n','2021-07-22 16:29:59',NULL),('test1','<p>22</p>\r\n','2021-07-22 18:09:10',NULL),('第一篇','<p>测试一下</p>\r\n','2021-07-22 21:03:27',NULL);
+INSERT INTO `article` VALUES ('测试','<p>为什么时间对不上</p>\r\n','2021-07-27 19:45:31',NULL),('第一篇','<p>斗之力三段！望着测验魔石碑上面闪亮得甚至有些刺眼的五个大字</p>\r\n','2021-07-28 03:41:34',NULL),('第三篇','<p>少年面无表情唇角有着一抹自嘲</p>\r\n','2021-07-27 19:42:17',NULL),('第二篇','<p>测试一下11</p>\r\n','2021-07-28 03:37:43',NULL),('雪中悍刀行','<p>北凉王府龙盘虎踞于清凉山，千门万户，极土木之盛。</p>\r\n','2021-07-27 19:44:50',NULL);
 /*!40000 ALTER TABLE `article` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -124,7 +122,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (2,'徐cw','756024886@qq.com','pbkdf2:sha256:260000$riYZ97wMHgo5NL5q$c08bde046876c2e8308a579837510639f6ef2401e401a552ee9903833bf78030','hahaha','2021-07-22 21:27:29');
+INSERT INTO `user` VALUES (2,'徐cw','756024886@qq.com','pbkdf2:sha256:260000$riYZ97wMHgo5NL5q$c08bde046876c2e8308a579837510639f6ef2401e401a552ee9903833bf78030','my first account！','2021-07-27 19:48:15');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -137,4 +135,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-07-23  5:54:44
+-- Dump completed on 2021-07-28  3:52:09

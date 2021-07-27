@@ -48,7 +48,7 @@ class Post(db.Model):
 def load_user(id):
     return User.query.get(int(id))
 
-class article(db.Model):
+class Article(db.Model):
     __tablename__ = 'article'
     title = db.Column(db.String(140),primary_key=True)
     body = db.Column(db.String(9999))
@@ -56,4 +56,4 @@ class article(db.Model):
     user_id = db .Column(db.Integer,db.ForeignKey('user.id'))
 
     def __repr__(self):
-        return '<article {}>'.format(self.title, self.body)
+        return '<article {}>'.format(self.title)

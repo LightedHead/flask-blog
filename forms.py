@@ -43,3 +43,4 @@ class PostForm(FlaskForm):
 
     title = StringField('Title', [DataRequired(), Length(max=255)])
     text = TextAreaField('Blog Content', [DataRequired()])
+

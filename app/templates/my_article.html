@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!--[if lte IE 8]> <html class="oldie" lang="en"> <![endif]-->
 <!--[if IE 9]> <html class="ie9" lang="en"> <![endif]-->
@@ -17,24 +18,62 @@
     <link rel="stylesheet" href="{{url_for('static', filename='js/fancybox/jquery.fancybox.css')}}"  type="text/css" media="screen" />
 	<link rel="stylesheet" href="{{url_for('static', filename='css/all.css')}}" />
 	<link rel="stylesheet" href="{{url_for('static', filename='css/screen.css')}}" />
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
 
     </head>
     <body>
+
     <div id="wrapper">
 		<div class="wrapper-holder">
 			<header id="header">
 				<a class="menu_trigger" href="#">menu</a>
 					<nav id="nav">
 						<ul>
-							<li><a class="active" href="{{ url_for('index') }}">首页</a></li>
-                            <li><a href="{{ url_for('my_article') }}">我的文章</a></li>
+							<li><a href="{{ url_for('index') }}">首页</a></li>
+                            <li><a class="active" href="{{ url_for('my_article') }}">我的文章</a></li>
                             <li><a href="{{ url_for('new_article') }}">新建文章</a></li>
                             <li><a href="{{ url_for('user', username=current_user.username) }}">用户中心</a></li>
-                            <li><a href="{{ url_for('logout') }}">退出</a></li>
+                            <li><a href="{{ url_for('logout') }}">退出</a></li><br><br>
 						</ul>
 					</nav>
-				<h1 class="logo">你好呀, {{ current_user.username }} !</h1>
-                <h2 class="slogan">WELCOME BACK !</h2>
+            <form method="post" action="{{url_for('search_article')}}" >
+                <input type="text" name="content" id="content" placeholder="请输入搜索内容">
+                <input type="submit" value="搜索">
+            </form>
+                <table class="table table-hover">
+                    <tr>
+                        <th>标题</th>
+                        <th>内容</th>
+                        <th>发布时间</th>
+                        <th>操</th>
+                        <th>作</th>
+                    </tr>
+
+                    {% if searched %}
+                         {% for i in title_article %}
+                    <tr>
+                        <td> {{i.title}} </td>
+                        <td> {{i.body}} </td>
+                        <td> {{i.timestamp}} </td>
+                        <td><a href="{{ url_for('edit_article', id=i.title) }}" class="btn btn-primary">编辑</a></td>
+                        <td><a href="{{ url_for('delete_article', id=i.title) }}" class="btn btn-primary">删除</a></td>
+                    </tr>
+
+                    {% endfor %}
+                    {% endif %}
+
+                    {% for i in article %}
+                    <tr>
+                        <td> {{i.title}} </td>
+                        <td> {{i.body}} </td>
+                        <td> {{i.timestamp}} </td>
+                        <td><a href="{{ url_for('edit_article', id=i.title) }}" class="btn btn-primary">编辑</a></td>
+                        <td><a href="{{ url_for('delete_article', id=i.title) }}" class="btn btn-primary">删除</a></td>
+                    </tr>
+
+                    {% endfor %}
+                </table>
+
 			</header>
         </div>
             <div class="wrapper-holder green">
@@ -49,6 +88,10 @@
 
 		</footer>
 	</div>
+
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="{{url_for('static', filename='js/isotope.pkgd.min.js')}}" ></script>
 	<script src="{{url_for('static', filename='js/cells-by-row.js')}}"></script>

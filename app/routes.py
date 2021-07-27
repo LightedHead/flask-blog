@@ -7,7 +7,7 @@ from app import app
 from forms import LoginForm, PostForm
 
 from flask_login import current_user, login_user
-from app.models import User, Post, load_user, article
+from app.models import User, Post, load_user, Article
 from flask_login import logout_user
 from flask_login import login_required
 
@@ -132,54 +132,70 @@ def new_article():
     form = PostForm()
 
     if form.validate_on_submit():
-        new_post = article(title=form.title.data, body= form.text.data)
+        new_post = Article(title=form.title.data, body= form.text.data,)
 
         db.session.add(new_post)
         db.session.commit()
         return redirect(url_for('index'))
 
-    return render_template('new_article.html',
-                           form=form)
+    return render_template('new_article.html',form=form)
 
 #文章的编辑
-@app.route('/edit/<string:id>', methods=['GET', 'POST'])
+@app.route('/edit_article/<string:id>', methods=['GET', 'POST'])
 @login_required
 def edit_article(id):
     """View function for edit_post."""
 
-    post = Post.query.get_or_404(id)
+    #一对多查询
+    post = Article.query.get_or_404(id)
     form = PostForm()
 
     if form.validate_on_submit():
         post.title = form.title.data
-        post.text = form.text.data
-        post.publish_date = datetime.now()
+        post.body = form.text.data
+        post.timestamp = datetime.now()
 
         # Update the post
         db.session.add(post)
         db.session.commit()
-        return redirect(url_for('blog.post', post_id=load_user(id)))
+        return redirect(url_for('edit_article', id=post.title))
 
     form.title.data = post.title
-    form.text.data = post.text
+    form.text.data = post.body
     return render_template('edit_article.html', form=form, post=post)
 
-@app.route('/edit/<string:id>', methods=['GET', 'POST'])
+#查看文章列表
+@app.route('/my_article', methods=['GET', 'POST'])
 @login_required
-def list_article(id):
+def my_article():
+
+    article = Article.query.all()
+
+    return render_template('my_article.html', article=article)
+
+#文章的删除
+@app.route('/delete_article/<string:id>', methods=['GET', 'POST'])
+@login_required
+def delete_article(id):
     """View function for edit_post."""
 
-    form = PostForm()
+    #一对多查询
+    post = Article.query.get_or_404(id)
 
-    if form.validate_on_submit():
-        title = form.title.data
-        text = form.text.data
-        publish_date = datetime.now()
-        print(title)
-        print(text)
-        print(publish_date)
+    db.session.delete(post)
+    db.session.commit()
+    return redirect(url_for('my_article'))
 
-        return redirect(url_for('index'))
+    return render_template(url_for('my_article'))
 
+#文章的查找
+@app.route('/search_article', methods=['GET', 'POST'])
+@login_required
+def search_article():
+    """View function for edit_post."""
 
-    return render_template('edit_article.html', form=form, post=post)
+    title = str(request.form.get('content'))
+    title_article = Article.query.get_or_404(title)
+    searched = 1
+
+    return render_template('my_article.html', title_article=title_article,searched = searched)
