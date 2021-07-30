@@ -151,7 +151,7 @@ def edit_article(id):
     form = PostForm()
 
     if form.validate_on_submit():
-        post.title = form.title.data
+        post.title = id
         post.body = form.text.data
         post.timestamp = datetime.now()
 
