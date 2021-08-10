@@ -4,17 +4,13 @@ from app.Forms.Login_Form import LoginForm
 from flask_login import current_user, login_user
 from app.Models.User import User
 
-from flask import Blueprint
+from app.Routes import bp
 
-from app.Models.User import User
-
-login_blue = Blueprint('login', __name__)
-
-@login_blue.route('/login',methods=['GET','POST'])
+@bp.route('/login',methods=['GET','POST'])
 def login():
     # 判断当前用户是否验证，如果通过的话返回首页
     if current_user.is_authenticated:
-        return redirect(url_for('to_index.index'))
+        return redirect(url_for('blog.index'))
 
     #创建一个表单实例
     form = LoginForm()
@@ -27,8 +23,8 @@ def login():
             # 如果用户不存在或者密码不正确就会闪现这条信息
             flash('无效的用户名或密码')
             # 然后重定向到登录页面
-            return redirect(url_for('login.login'))
+            return redirect(url_for('blog.login'))
         # 这是一个非常方便的方法，当用户名和密码都正确时来解决记住用户是否记住登录状态的问题
         login_user(user, remember=form.remember_me.data)
-        return redirect(url_for('to_index.index'))
+        return redirect(url_for('blog.index'))
     return render_template('login.html', title='登录', form=form)

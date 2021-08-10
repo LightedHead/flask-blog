@@ -2,26 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4531f595-bb39-4043-8592-b4b810d0002a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Forms/EditProfile_Form.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Forms/Login_Form.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Forms/Post_Form.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Forms/Registration_Form.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Aricle.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Post.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/User.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Routes/article_operation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Routes/edit_profit.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Routes/login.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Routes/logout.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Routes/register.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Routes/to_index.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Routes/user_sayings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Forms/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Routes/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Routes/app_to_bp.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Routes/article_operation.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/Routes/article_operation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Routes/edit_profit.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/Routes/edit_profit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Routes/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/Routes/login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Routes/logout.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/Routes/logout.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Routes/register.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/Routes/register.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Routes/to_index.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/Routes/to_index.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Routes/user_sayings.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/Routes/user_sayings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/edit_article.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/edit_article.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/edit_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/edit_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/my_article.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/my_article.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/new_article.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/new_article.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/user.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +45,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/flask_blog/gdouwechatapp/gdouwechatapp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -123,5 +123,15 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/Routes/to_index.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

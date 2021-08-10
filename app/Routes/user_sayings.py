@@ -3,8 +3,10 @@ from app import app
 from flask_login import login_required
 from app.Models.User import User
 
+from app.Routes import bp
+
 #个人信息的留言
-@app.route('/user/<username>')
+@bp.route('/user/<username>')
 @login_required
 def user(username):
 

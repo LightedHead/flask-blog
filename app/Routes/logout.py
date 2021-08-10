@@ -6,10 +6,10 @@ from flask import Blueprint
 
 from app.Models.User import User
 
-logout_blue = Blueprint('logout', __name__)
+from app.Routes import bp
 
 #退出登录
-@logout_blue.route('/logout')
+@bp.route('/logout')
 def logout():
     logout_user()
-    return redirect(url_for('index'))
+    return redirect(url_for('blog.index'))

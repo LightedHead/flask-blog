@@ -26,11 +26,11 @@
 				<a class="menu_trigger" href="#">menu</a>
 					<nav id="nav">
 						<ul>
-							<li><a class="active" href="{{ url_for('index') }}">首页</a></li>
-                            <li><a href="{{ url_for('my_article') }}">我的文章</a></li>
-                            <li><a href="{{ url_for('new_article') }}">新建文章</a></li>
-                            <li><a href="{{ url_for('user', username=current_user.username) }}">用户中心</a></li>
-                            <li><a href="{{ url_for('logout') }}">退出</a></li>
+							<li><a class="active" href="{{ url_for('blog.index') }}">首页</a></li>
+                            <li><a href="{{ url_for('blog.my_article') }}">我的文章</a></li>
+                            <li><a href="{{ url_for('blog.new_article') }}">新建文章</a></li>
+                            <li><a href="{{ url_for('blog.user', username=current_user.username) }}">用户中心</a></li>
+                            <li><a href="{{ url_for('blog.logout') }}">退出</a></li>
 						</ul>
 					</nav>
 				<h1 class="logo">你好呀, {{ current_user.username }} !</h1>

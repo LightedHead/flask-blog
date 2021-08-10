@@ -21,20 +21,10 @@ migrate = Migrate(app, db)
 login = LoginManager(app)
 
 # 有一部分功能是要你登录后才能使用的，那么在flask中怎么实现这个登录才能使用的功能呢？
-login.login_view = 'login'
+login.login_view = 'blog.login'
 from app.Routes import *
 from app.Models import *
 
-from app.Routes.to_index import to_index_blue
-from app.Routes.login import login_blue
-from app.Routes.register import register_blue
-from app.Routes.logout import logout_blue
-from app.Routes.article_operation import article_operation_blue
-from app.Routes.edit_profit import edit_profit_blue
+from app.Routes import bp
 
-app.register_blueprint(login_blue)
-app.register_blueprint(to_index_blue)
-app.register_blueprint(register_blue)
-app.register_blueprint(logout_blue)
-app.register_blueprint(article_operation_blue)
-app.register_blueprint(edit_profit_blue)
+app.register_blueprint(bp)

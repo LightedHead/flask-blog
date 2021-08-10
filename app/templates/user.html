@@ -27,11 +27,11 @@
 				<a class="menu_trigger" href="#">menu</a>
 					<nav id="nav">
 						<ul>
-							<li><a href="{{ url_for('index') }}">首页</a></li>
-                            <li><a href="{{ url_for('my_article') }}">我的文章</a></li>
-                            <li><a href="{{ url_for('new_article') }}">新建文章</a></li>
-                            <li><a class="active" href="{{ url_for('user', username=current_user.username) }}">用户中心</a></li>
-                            <li><a href="{{ url_for('logout') }}">退出</a></li>
+							<li><a href="{{ url_for('blog.index') }}">首页</a></li>
+                            <li><a href="{{ url_for('blog.my_article') }}">我的文章</a></li>
+                            <li><a href="{{ url_for('blog.new_article') }}">新建文章</a></li>
+                            <li><a class="active" href="{{ url_for('blog.user', username=current_user.username) }}">用户中心</a></li>
+                            <li><a href="{{ url_for('blog.logout') }}">退出</a></li>
 						</ul>
 					</nav>
 
@@ -46,7 +46,7 @@
                      {% if user.about_me %}<font size="5">个性签名：{{ user.about_me }}</font>{% endif %}<br><br>
                      {% if user.last_seen %}<font size="5">最近登录: {{ user.last_seen }}</font>{% endif %}<br><br>
                      {% if user == current_user %}
-                         <p><a href="{{ url_for('edit_profile') }}">个人资料编辑</a></p>
+                         <p><a href="{{ url_for('blog.edit_profile') }}">个人资料编辑</a></p>
                       {% endif %}
                             {% for post in posts %}
                                 {% include '_post.html' %}
